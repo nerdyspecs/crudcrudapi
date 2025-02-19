@@ -35,19 +35,6 @@ namespace crudcrudapi.Controllers
             return Ok(product);
         }
 
-        // **CREATE A PRODUCT**
-        //[HttpPost]
-        //public async Task<IActionResult> CreateProduct([FromBody] Product product_obj)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    await _service.CreateProduct(product_obj);
-        //    return CreatedAtAction(nameof(GetProduct), new { product_id = product_obj.ProductId }, product_obj);
-        //}
-
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] ProductCreate productcreate_obj)
         {
@@ -71,7 +58,7 @@ namespace crudcrudapi.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            var test = "apple";
             await _service.UpdateProduct(product_id, product_obj);
             return NoContent();
         }
