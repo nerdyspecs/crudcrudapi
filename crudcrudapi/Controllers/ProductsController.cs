@@ -15,7 +15,7 @@ namespace crudcrudapi.Controllers
             _service = service;
         }
 
-        // **GET ALL PRODUCTS**
+        // get all products
         [HttpGet]
         public async Task<IActionResult> GetAllProducts()
         {
@@ -23,7 +23,7 @@ namespace crudcrudapi.Controllers
             return Ok(products);
         }
 
-        // **GET PRODUCT BY ID**
+        // get product by id
         [HttpGet("{product_id}")]
         public async Task<IActionResult> GetProduct(string product_id)
         {
@@ -35,6 +35,7 @@ namespace crudcrudapi.Controllers
             return Ok(product);
         }
 
+        // create product
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] ProductCreate productcreate_obj)
         {
@@ -50,7 +51,7 @@ namespace crudcrudapi.Controllers
         }
 
 
-        // **UPDATE A PRODUCT**
+        // update product
         [HttpPut("{product_id}")]
         public async Task<IActionResult> UpdateProduct(string product_id, [FromBody] Product product_obj)
         {
@@ -63,7 +64,7 @@ namespace crudcrudapi.Controllers
             return NoContent();
         }
 
-        // **DELETE A PRODUCT**
+        // delete product
         [HttpDelete("{product_id}")]
         public async Task<IActionResult> DeleteProduct(string product_id)
         {
